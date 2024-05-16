@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 21-22</title>
+</head>
+<body>
+<!--
+Instruções:
+Utilizando funções, crie um quiz com perguntas de sua preferência. 
+Você deve criar no mínimo 3 funções. Poste o código no github e envie o link do código na resposta.
+-->
+<script>
+
+/*
+FUNÇÕES USADAS PARA O DESAFIO:
+---parseInt
+---function quiz()
+---function refazerQuiz()
+*/
+const jogador = prompt("Digite seu nome!")
+let pontos = 0
+
+alert (`Olá, ${jogador}! Seja bem vindo ao nosso quiz de astronomia.`)
+
+function quiz(){
+    let quest1 = parseInt(prompt("O Sistema Solar possui uma estrela principal, qual o nome dela? \n 1- lua, 2- Plutão, 3- Sol"))
+
+    switch (quest1) {
+        case 3:
+            alert("Resposta correta!")
+            pontos++
+            break;
+    
+        default:
+            alert("Resposta errada!")
+            break;
+    }
+
+   let quest2 = parseInt(prompt("Como se chama um aglomerado de estrelas?? \n 1- Buraco Negro, 2- Constelação, 3- Alcatéia"))
+   switch (quest2) {
+        case 2:
+            alert("Resposta correta!")
+            pontos++
+            break;
+    
+        default:
+            alert("Resposta errada!")
+            break;
+    }
+
+    let quest3 = parseInt(prompt("Qual o satélite natural do planeta Terra?? \n 1- Lua, 2- Thalita"))
+    switch (quest3) {
+        case 1:
+            alert("Resposta correta!")
+            pontos++
+            break;
+    
+        default:
+            alert("A Thalita é linda e ilumidada, mas não é nosso satélite!")
+            break;
+    }
+
+    alert(`${jogador}, você marcou ${pontos} pontos`)
+    refazerQuiz()
+} 
+
+function refazerQuiz(){
+    let newQuiz = parseInt(prompt("Deseja refazer o quiz? 1-SIM, 2-NÃO"))
+        if(newQuiz === 1){
+            quiz()
+        } else{
+            alert("Pode fechar a janela!")
+        }
+}
+
+quiz()
+
+</script>
+ 
+</body>
+</html>
